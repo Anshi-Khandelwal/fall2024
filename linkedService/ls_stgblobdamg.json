@@ -1,0 +1,11 @@
+{
+	"name": "ls_stgblobdamg",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://stgblobdamg.blob.core.windows.net/",
+			"accountKind": "StorageV2"
+		}
+	}
+}
