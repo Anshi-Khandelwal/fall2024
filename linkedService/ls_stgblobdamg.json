@@ -1,0 +1,10 @@
+{
+	"name": "ls_stgblobdamg",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stgblobdamg.dfs.core.windows.net/"
+		}
+	}
+}
