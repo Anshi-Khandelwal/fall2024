@@ -1,5 +1,5 @@
 {
-	"name": "ds_textfile1",
+	"name": "ds_textfile",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_stgfall2024damg",
