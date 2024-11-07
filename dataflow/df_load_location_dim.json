@@ -25,7 +25,7 @@
 						"referenceName": "ds_public_location_dim",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sinkLocationDim"
 				}
 			],
 			"transformations": [
@@ -97,7 +97,7 @@
 				"          STATE = state,",
 				"          DI_CREATED_DT,",
 				"          DI_JOB_ID",
-				"     )) ~> sink1"
+				"     )) ~> sinkLocationDim"
 			]
 		}
 	}
