@@ -1,0 +1,23 @@
+{
+	"name": "Ds_choicago",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stgfall2024damg",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Traffic_Data_Chicago.tsv",
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
