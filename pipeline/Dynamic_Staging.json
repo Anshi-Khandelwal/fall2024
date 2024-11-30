@@ -1,0 +1,222 @@
+{
+	"name": "Dynamic_Staging",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup_Table_Name",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:10:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT t.name AS table_name, s.name schema_name\nFROM sys.tables t join sys.schemas s\n on t.schema_id = s.schema_id\nWHERE type ='U' and s.name = '@{pipeline().parameters.sname}'",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": "dbo",
+							"table_name": "customer"
+						}
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEachTable",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup_Table_Name",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup_Table_Name').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"batchCount": 10,
+					"activities": [
+						{
+							"name": "SourceTable2Parquet",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.00:30:00",
+								"retry": 2,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"name": "License Issue Date",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "License_Issue_Date",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "License Number",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "License_Number",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "Animal's Name",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "Animal_Name",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "Species",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "Species",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "Primary Breed",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "Primary_Breed",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "Secondary Breed",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "Secondary_Breed",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "ZIP Code",
+												"type": "String",
+												"physicalType": "String"
+											},
+											"sink": {
+												"name": "ZIP_Code",
+												"physicalType": "UTF8"
+											}
+										}
+									],
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "AzureSqlTable1",
+									"type": "DatasetReference",
+									"parameters": {
+										"schema_name": {
+											"value": "@item().schema_name",
+											"type": "Expression"
+										},
+										"table_name": {
+											"value": "@item().table_name",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_Parquet_Staging",
+									"type": "DatasetReference",
+									"parameters": {
+										"Directory": "na",
+										"FileName": {
+											"value": "@concat(\n    item().table_name,'.parquet'\n)",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"sname": {
+				"type": "string",
+				"defaultValue": "dbo"
+			}
+		},
+		"variables": {
+			"tablename": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
