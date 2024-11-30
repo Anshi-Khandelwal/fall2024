@@ -665,11 +665,17 @@
 						"additionalColumns": [
 							{
 								"name": "DI_Created_DT",
-								"value": ""
+								"value": {
+									"value": "@pipeline().parameters.JOBID",
+									"type": "Expression"
+								}
 							},
 							{
 								"name": "DI_Job_Id",
-								"value": "$$FILEPATH"
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
 							}
 						],
 						"storeSettings": {
