@@ -1,0 +1,9 @@
+{
+	"name": "adf-fall2024damg",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7c91a12b-4381-4eff-aa26-af1b5e1e9fe8",
+		"tenantId": "a8eec281-aaa3-4dae-ac9b-9a398b9215e7"
+	}
+}
