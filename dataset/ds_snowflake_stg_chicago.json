@@ -1,0 +1,247 @@
+{
+	"name": "ds_snowflake_stg_chicago",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_snowflake_demo1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "CRASH_RECORD_ID",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "CRASH_DATE_EST_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "CRASH_DATE",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
+				"name": "POSTED_SPEED_LIMIT",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "TRAFFIC_CONTROL_DEVICE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DEVICE_CONDITION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "WEATHER_CONDITION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LIGHTING_CONDITION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "FIRST_CRASH_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "TRAFFICWAY_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LANE_CNT",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "ALIGNMENT",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "ROADWAY_SURFACE_COND",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "ROAD_DEFECT",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "REPORT_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "CRASH_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "INTERSECTION_RELATED_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "NOT_RIGHT_OF_WAY_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "HIT_AND_RUN_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DAMAGE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DATE_POLICE_NOTIFIED",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
+				"name": "PRIM_CONTRIBUTORY_CAUSE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "SEC_CONTRIBUTORY_CAUSE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "STREET_NO",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "STREET_DIRECTION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "STREET_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "BEAT_OF_OCCURRENCE",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "PHOTOS_TAKEN_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "STATEMENTS_TAKEN_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DOORING_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "WORK_ZONE_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "WORK_ZONE_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "WORKERS_PRESENT_I",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "NUM_UNITS",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "MOST_SEVERE_INJURY",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "INJURIES_TOTAL",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_FATAL",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_INCAPACITATING",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_NON_INCAPACITATING",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_REPORTED_NOT_EVIDENT",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_NO_INDICATION",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "INJURIES_UNKNOWN",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "CRASH_HOUR",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "CRASH_DAY_OF_WEEK",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "CRASH_MONTH",
+				"type": "NUMBER",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "LATITUDE",
+				"type": "FLOAT"
+			},
+			{
+				"name": "LONGITUDE",
+				"type": "FLOAT"
+			},
+			{
+				"name": "LOCATION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DI_CREATEDATE",
+				"type": "DATE"
+			},
+			{
+				"name": "DI_WORKFLOWFILENAME",
+				"type": "VARCHAR"
+			}
+		],
+		"typeProperties": {
+			"schema": "FINALPROJECT",
+			"table": "CHICAGO_COLLISIONS"
+		}
+	}
+}
