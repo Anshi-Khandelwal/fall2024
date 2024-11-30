@@ -1,0 +1,28 @@
+{
+	"name": "Ds_textfile_chicago",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stgfall2024damg",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Traffic_Data_Chicago.tsv",
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CRASH_RECORD_ID\tCRASH_DATE_EST_I\tCRASH_DATE\tPOSTED_SPEED_LIMIT\tTRAFFIC_CONTROL_DEVICE\tDEVICE_CONDITION\tWEATHER_CONDITION\tLIGHTING_CONDITION\tFIRST_CRASH_TYPE\tTRAFFICWAY_TYPE\tLANE_CNT\tALIGNMENT\tROADWAY_SURFACE_COND\tROAD_DEFECT\tREPORT_TYPE\tCRASH_TYPE\tINTERSECTION_RELATED_I\tNOT_RIGHT_OF_WAY_I\tHIT_AND_RUN_I\tDAMAGE\tDATE_POLICE_NOTIFIED\tPRIM_CONTRIBUTORY_CAUSE\tSEC_CONTRIBUTORY_CAUSE\tSTREET_NO\tSTREET_DIRECTION\tSTREET_NAME\tBEAT_OF_OCCURRENCE\tPHOTOS_TAKEN_I\tSTATEMENTS_TAKEN_I\tDOORING_I\tWORK_ZONE_I\tWORK_ZONE_TYPE\tWORKERS_PRESENT_I\tNUM_UNITS\tMOST_SEVERE_INJURY\tINJURIES_TOTAL\tINJURIES_FATAL\tINJURIES_INCAPACITATING\tINJURIES_NON_INCAPACITATING\tINJURIES_REPORTED_NOT_EVIDENT\tINJURIES_NO_INDICATION\tINJURIES_UNKNOWN\tCRASH_HOUR\tCRASH_DAY_OF_WEEK\tCRASH_MONTH\tLATITUDE\tLONGITUDE\tLOCATION",
+				"type": "String"
+			}
+		]
+	}
+}
