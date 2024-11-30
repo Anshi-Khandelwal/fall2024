@@ -10,7 +10,8 @@
 				"type": "string"
 			},
 			"FileName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Traffic_Data_Chicago.tsv"
 			}
 		},
 		"annotations": [],
@@ -18,7 +19,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Traffic_Data_Chicago.tsv",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Directory",
+					"type": "Expression"
+				},
 				"fileSystem": "bronze"
 			},
 			"columnDelimiter": "\t",
