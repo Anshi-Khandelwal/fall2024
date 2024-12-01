@@ -531,7 +531,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Law_enforcement_fatality count",
+									"name": "Law_enforcement_fatality_count",
 									"physicalType": "UTF8"
 								}
 							},
