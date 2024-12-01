@@ -1,0 +1,35 @@
+{
+	"name": "Ds_Austin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stgfall2024damg",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Directroy": {
+				"type": "string"
+			},
+			"FileName": {
+				"type": "string",
+				"defaultValue": "Austin_Data.tsv"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
