@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Seattle_Pet_Licenses.parquet",
+				"fileName": "city.parquet",
+				"folderPath": "@if(equals(dataset().Directory,'na'),'',dataset().Directory)",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
