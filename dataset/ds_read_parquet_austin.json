@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Austin_Data.parquet",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
