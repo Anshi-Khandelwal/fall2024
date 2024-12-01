@@ -11,7 +11,7 @@
 			},
 			"FileName": {
 				"type": "string",
-				"defaultValue": "NYC_Data.tsv"
+				"defaultValue": "NYC_CRASH_Data.tsv"
 			}
 		},
 		"annotations": [],
