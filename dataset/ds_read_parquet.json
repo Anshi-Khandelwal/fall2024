@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Traffic_Data_Chicago.parquet",
+				"fileName": "Traafic_Chicago_Data.parquet",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
