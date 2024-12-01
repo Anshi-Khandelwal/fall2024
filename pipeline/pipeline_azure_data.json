@@ -58,8 +58,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash ID",
-									"type": "String",
+									"name": "Crash_ID",
 									"physicalType": "UTF8"
 								}
 							},
@@ -94,8 +93,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Primary address",
-									"type": "String",
+									"name": "Primary_address",
 									"physicalType": "UTF8"
 								}
 							},
@@ -106,8 +104,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Secondary address",
-									"type": "String",
+									"name": "Secondary_address",
 									"physicalType": "UTF8"
 								}
 							},
@@ -490,8 +487,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash timestamp (US/Central)",
-									"type": "String",
+									"name": "Crash_timestamp_US_Central",
 									"physicalType": "UTF8"
 								}
 							},
@@ -502,8 +498,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash timestamp",
-									"type": "String",
+									"name": "Crash_timestamp",
 									"physicalType": "UTF8"
 								}
 							},
@@ -514,8 +509,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Is deleted",
-									"type": "String",
+									"name": "Is_deleted",
 									"physicalType": "UTF8"
 								}
 							},
@@ -526,8 +520,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Is temporary record",
-									"type": "String",
+									"name": "Is_temporary_record",
 									"physicalType": "UTF8"
 								}
 							},
@@ -538,8 +531,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Law enforcement fatality count",
-									"type": "String",
+									"name": "Law_enforcement_fatality count",
 									"physicalType": "UTF8"
 								}
 							},
@@ -550,8 +542,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Reported street prefix",
-									"type": "String",
+									"name": "Reported_street_prefix",
 									"physicalType": "UTF8"
 								}
 							}
