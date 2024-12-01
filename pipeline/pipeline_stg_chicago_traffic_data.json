@@ -629,7 +629,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Directory": "na",
-							"FileName": "Traffic_Data_Chicago.tsv"
+							"FileName": "Traafic_Chicago_Data.tsv"
 						}
 					}
 				],
@@ -1191,7 +1191,7 @@
 								},
 								"sink": {
 									"name": "DI_CREATEDATE",
-									"type": "DateTime"
+									"type": "String"
 								}
 							},
 							{
