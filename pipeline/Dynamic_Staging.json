@@ -144,6 +144,22 @@
 							"typeProperties": {
 								"source": {
 									"type": "ParquetSource",
+									"additionalColumns": [
+										{
+											"name": "DI_Job_ID",
+											"value": {
+												"value": "@pipeline().parameters.JobId",
+												"type": "Expression"
+											}
+										},
+										{
+											"name": "DI_Created_Dt",
+											"value": {
+												"value": "@utcNow()",
+												"type": "Expression"
+											}
+										}
+									],
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
@@ -203,6 +219,10 @@
 			"sname": {
 				"type": "string",
 				"defaultValue": "dbo"
+			},
+			"JobId": {
+				"type": "string",
+				"defaultValue": "1"
 			}
 		},
 		"variables": {
