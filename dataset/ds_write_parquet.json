@@ -1,0 +1,36 @@
+{
+	"name": "ds_write_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_stgfall2024damg",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "silver"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "city_id",
+				"type": "INT32"
+			},
+			{
+				"name": "city",
+				"type": "UTF8"
+			},
+			{
+				"name": "country_id",
+				"type": "INT32"
+			},
+			{
+				"name": "last_update",
+				"type": "INT96"
+			}
+		]
+	}
+}
