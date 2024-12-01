@@ -23,10 +23,6 @@
 					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"folderPath": {
-					"value": "@dataset().Directory",
-					"type": "Expression"
-				},
 				"fileSystem": "bronze"
 			},
 			"columnDelimiter": "\t",
