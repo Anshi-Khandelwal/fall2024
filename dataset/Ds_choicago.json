@@ -11,7 +11,7 @@
 			},
 			"FileName": {
 				"type": "string",
-				"defaultValue": "Traffic_Data_Chicago.tsv"
+				"defaultValue": "Traafic_Chicago_Data.tsv"
 			}
 		},
 		"annotations": [],
