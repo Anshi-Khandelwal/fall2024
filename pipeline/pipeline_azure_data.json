@@ -1,0 +1,586 @@
+{
+	"name": "pipeline_azure_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_2_Parquet",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Crash ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Crash ID",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "crash_fatal_fl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "crash_fatal_fl",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "case_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "case_id",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Primary address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Primary address",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Secondary address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Secondary address",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "rpt_block_num",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "rpt_block_num",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "rpt_street_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "rpt_street_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "rpt_street_sfx",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "rpt_street_sfx",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "crash_speed_limit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "crash_speed_limit",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "road_constr_zone_fl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "road_constr_zone_fl",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "latitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "latitude",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "longitude",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "longitude",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "crash_sev_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "crash_sev_id",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "sus_serious_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sus_serious_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "nonincap_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nonincap_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "poss_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "poss_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "non_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "non_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "unkn_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unkn_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "tot_injry_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "tot_injry_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "death_cnt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "death_cnt",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "units_involved",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "units_involved",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "point",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "point",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "motor_vehicle_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "motor_vehicle_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "motor_vehicle_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "motor_vehicle_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "bicycle_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bicycle_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "bicycle_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bicycle_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "pedestrian_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "pedestrian_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "pedestrian_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "pedestrian_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "motorcycle_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "motorcycle_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "motorcycle_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "motorcycle_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "other_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "other_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "other_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "other_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "onsys_fl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "onsys_fl",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "private_dr_fl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "private_dr_fl",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "micromobility_serious_injury_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "micromobility_serious_injury_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "micromobility_death_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "micromobility_death_count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Crash timestamp (US/Central)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Crash timestamp (US/Central)",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Crash timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Crash timestamp",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Is deleted",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Is deleted",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Is temporary record",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Is temporary record",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Law enforcement fatality count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Law enforcement fatality count",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Reported street prefix",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Reported street prefix",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Ds_Austin",
+						"type": "DatasetReference",
+						"parameters": {
+							"Directroy": "na",
+							"FileName": "Austin_Data.tsv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_read_parquet_austin",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
