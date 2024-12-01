@@ -58,8 +58,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash ID",
-									"type": "String",
+									"name": "Crash_ID",
 									"physicalType": "UTF8"
 								}
 							},
