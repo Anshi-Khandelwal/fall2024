@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "NYC_Data.parquet",
+				"fileName": "NYC_CRASH_Data.parquet",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
