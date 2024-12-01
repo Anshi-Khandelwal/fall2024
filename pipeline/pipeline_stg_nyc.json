@@ -1,0 +1,394 @@
+{
+	"name": "pipeline_stg_nyc",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CRASH DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CRASH_DATE",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CRASH TIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CRASH_TIME",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "BOROUGH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BOROUGH",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ZIP CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZIP_CODE",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "LATITUDE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LATITUDE",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "LONGITUDE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LONGITUDE",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ON STREET NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ON_STREET_NAME",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CROSS STREET NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CROSS_STREET_NAME",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "OFF STREET NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OFF_STREET_NAME",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF PERSONS INJURED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER _OF_PERSONS_INJURED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF PERSONS KILLED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_PERSONS_KILLED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF PEDESTRIANS INJURED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_PEDESTRIANS_INJURED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF PEDESTRIANS KILLED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_PEDESTRIANS_KILLED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF CYCLIST INJURED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_CYCLIST_INJURED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF CYCLIST KILLED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_CYCLIST_KILLED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF MOTORIST INJURED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_MOTORIST_INJURED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMBER OF MOTORIST KILLED",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NUMBER_OF_MOTORIST_KILLED",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRIBUTING FACTOR VEHICLE 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CONTRIBUTING_FACTOR_VEHICLE_1",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRIBUTING FACTOR VEHICLE 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CONTRIBUTING_FACTOR_VEHICLE_2",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRIBUTING FACTOR VEHICLE 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CONTRIBUTING_FACTOR_VEHICLE_3",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRIBUTING FACTOR VEHICLE 4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CONTRIBUTING_FACTOR_VEHICLE_4",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CONTRIBUTING FACTOR VEHICLE 5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CONTRIBUTING_FACTOR_VEHICLE_5",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "COLLISION_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COLLISION_ID",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "VEHICLE TYPE CODE 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VEHICLE_TYPE _CODE_1",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "VEHICLE TYPE CODE 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VEHICLE_TYPE_CODE_2",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "VEHICLE TYPE CODE 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VEHICLE_TYPE_CODE _3",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "VEHICLE TYPE CODE 4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VEHICLE_TYPE_CODE_4",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "VEHICLE TYPE CODE 5",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VEHICLE_TYPE_CODE_5",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Ds_NYC_Data",
+						"type": "DatasetReference",
+						"parameters": {
+							"Directory": "na",
+							"FileName": "NYC_Data.tsv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_write_parquet_nyc",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
