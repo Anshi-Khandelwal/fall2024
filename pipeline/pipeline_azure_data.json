@@ -58,7 +58,8 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash_ID",
+									"name": "Crash ID",
+									"type": "String",
 									"physicalType": "UTF8"
 								}
 							},
@@ -487,7 +488,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash_timestamp_US_CENTRAL",
+									"name": "Crash_Central",
 									"physicalType": "UTF8"
 								}
 							},
@@ -498,7 +499,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Crash_Timestamp",
+									"name": "Crash_timestamp",
 									"physicalType": "UTF8"
 								}
 							},
