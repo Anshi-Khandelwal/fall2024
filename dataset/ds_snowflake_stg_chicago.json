@@ -241,7 +241,7 @@
 		],
 		"typeProperties": {
 			"schema": "FINALPROJECT",
-			"table": "CHICAGO_COLLISIONS"
+			"table": "STG_CHICAGO_COLLISIONS"
 		}
 	}
 }
