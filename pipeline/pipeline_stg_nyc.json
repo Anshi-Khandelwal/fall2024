@@ -3,11 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy_2_Parquet",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "0.12:00:00",
+					"timeout": "0.01:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -138,7 +138,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CROSS_STREET_NAME",
+									"name": "CROSS_ST_NAME",
 									"physicalType": "UTF8"
 								}
 							},
@@ -149,7 +149,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "OFF_STREET_NAME",
+									"name": "OFF_ST_NAME",
 									"physicalType": "UTF8"
 								}
 							},
@@ -160,7 +160,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER _OF_PERSONS_INJURED",
+									"name": "NO_OF_PERSONS_INJURED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -171,7 +171,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_PERSONS_KILLED",
+									"name": "NO_OF_PERSONS_KILLED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -182,7 +182,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_PEDESTRIANS_INJURED",
+									"name": "NO_OF_PEDESTRIANS_INJURED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -193,7 +193,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_PEDESTRIANS_KILLED",
+									"name": "NO_OF_PEDESTRIANS_KILLED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -204,7 +204,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_CYCLIST_INJURED",
+									"name": "NO_OF_CYCLIST_INJURED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -215,7 +215,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_CYCLIST_KILLED",
+									"name": "NO_OF_CYCLIST_KILLED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -226,7 +226,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_MOTORIST_INJURED",
+									"name": "NO_OF_MOTORIST_INJURED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -237,7 +237,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "NUMBER_OF_MOTORIST_KILLED",
+									"name": "NO_OF_MOTORIST_KILLED",
 									"physicalType": "UTF8"
 								}
 							},
@@ -248,7 +248,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CONTRIBUTING_FACTOR_VEHICLE_1",
+									"name": "CONTRIBUTING_FACTOR_VEHICLE1",
 									"physicalType": "UTF8"
 								}
 							},
@@ -259,7 +259,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CONTRIBUTING_FACTOR_VEHICLE_2",
+									"name": "CONTRIBUTING_FACTOR_VEHICLE2",
 									"physicalType": "UTF8"
 								}
 							},
@@ -270,7 +270,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CONTRIBUTING_FACTOR_VEHICLE_3",
+									"name": "CONTRIBUTING_FACTOR_VEHICLE3",
 									"physicalType": "UTF8"
 								}
 							},
@@ -281,7 +281,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CONTRIBUTING_FACTOR_VEHICLE_4",
+									"name": "CONTRIBUTING_FACTOR_VEHICLE4",
 									"physicalType": "UTF8"
 								}
 							},
@@ -292,7 +292,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CONTRIBUTING_FACTOR_VEHICLE_5",
+									"name": "CONTRIBUTING_FACTOR_VEHICLE5",
 									"physicalType": "UTF8"
 								}
 							},
@@ -315,7 +315,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VEHICLE_TYPE _CODE_1",
+									"name": "VEHICLE_TYPE _CODE1",
 									"physicalType": "UTF8"
 								}
 							},
@@ -326,7 +326,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VEHICLE_TYPE_CODE_2",
+									"name": "VEHICLE_TYPE_CODE2",
 									"physicalType": "UTF8"
 								}
 							},
@@ -337,7 +337,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VEHICLE_TYPE_CODE _3",
+									"name": "VEHICLE_TYPE_CODE3",
 									"physicalType": "UTF8"
 								}
 							},
@@ -348,7 +348,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VEHICLE_TYPE_CODE_4",
+									"name": "VEHICLE_TYPE_CODE4",
 									"physicalType": "UTF8"
 								}
 							},
@@ -359,7 +359,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "VEHICLE_TYPE_CODE_5",
+									"name": "VEHICLE_TYPE_CODE5",
 									"physicalType": "UTF8"
 								}
 							}
