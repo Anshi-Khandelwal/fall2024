@@ -1,0 +1,16 @@
+{
+	"name": "ds_snowflake_nyc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_snowflake_demo1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "FINALPROJECT",
+			"table": "STG_NEWYORK_COLLISIONS"
+		}
+	}
+}
