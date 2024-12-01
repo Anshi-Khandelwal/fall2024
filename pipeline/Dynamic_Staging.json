@@ -188,7 +188,7 @@
 									"parameters": {
 										"SchemaName": "SAKILA",
 										"TableName": {
-											"value": "@item().table_name",
+											"value": "@toUpper(item().table_name)",
 											"type": "Expression"
 										}
 									}
