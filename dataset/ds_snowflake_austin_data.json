@@ -191,7 +191,7 @@
 		],
 		"typeProperties": {
 			"schema": "FINALPROJECT",
-			"table": "AUSTIN_COLLISIONS"
+			"table": "STG_AUSTIN_COLLISIONS"
 		}
 	}
 }
