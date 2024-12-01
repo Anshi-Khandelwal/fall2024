@@ -11,7 +11,7 @@
 			},
 			"FileName": {
 				"type": "string",
-				"defaultValue": "Austin_Data.tsv"
+				"defaultValue": "Austin_Crash_Data.tsv"
 			}
 		},
 		"annotations": [],
