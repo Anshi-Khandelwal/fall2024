@@ -337,7 +337,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Non_Motorist_Substance Abuse",
+									"name": "Non_Motorist_Substance_Abuse",
 									"physicalType": "UTF8"
 								}
 							},
