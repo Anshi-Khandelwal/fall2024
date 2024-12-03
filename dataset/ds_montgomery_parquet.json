@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Montgomery.parquet",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
