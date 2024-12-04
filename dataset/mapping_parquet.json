@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Contributing Factor Mappingv1.parquet",
 				"fileSystem": "silver"
 			},
 			"compressionCodec": "snappy"
