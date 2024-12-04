@@ -26,7 +26,7 @@
 				"fileSystem": "bronze"
 			},
 			"columnDelimiter": "\t",
-			"escapeChar": "\\",
+			"escapeChar": "\"",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
