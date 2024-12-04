@@ -122,6 +122,7 @@
 						"referenceName": "Ds_mapping",
 						"type": "DatasetReference",
 						"parameters": {
+							"Directory": "na",
 							"FileName": "Contributing Factor Mappingv1.tsv"
 						}
 					}
@@ -129,6 +130,130 @@
 				"outputs": [
 					{
 						"referenceName": "ds_Parquet_Staging",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "parquet_to_staging",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy_2_Silver_As_Parquet",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SnowflakeV2Sink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "ls_stgblobdamg",
+							"type": "LinkedServiceReference"
+						},
+						"path": "snowflakestaging"
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CODE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "Austin",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AUSTIN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Chicago",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHICAGO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "New_York",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NEW_YORK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Montgomery",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MONTGOMERY",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "mapping_parquet",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_snowflale_mapping",
 						"type": "DatasetReference"
 					}
 				]
