@@ -1,0 +1,139 @@
+{
+	"name": "pipeline_mapping_document",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_2_Silver_As_Parquet",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Code",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Austin ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Austin",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Chicago",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Chicago",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "New York",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "New_York",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Montgomery",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Montgomery",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Ds_mapping",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "Contributing Factor Mappingv1.tsv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_Parquet_Staging",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
