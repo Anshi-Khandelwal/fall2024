@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "FINALPROJECT",
-			"table": "MONTGOMERY_CRASHES"
+			"table": "STG_MONTGOMERY_CRASHES"
 		}
 	}
 }
