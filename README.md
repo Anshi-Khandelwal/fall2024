@@ -15,7 +15,7 @@ Collision data was sourced from official city and DOT open-data portals:
 - **NYC:** Motor Vehicle Collisions – Crashes (NYC Open Data)
 - **Chicago:** Traffic Crashes – Crashes (Chicago Data Portal)
 - **Austin:** Crash Report Data – Crash Level Records (Texas DOT)
-- **Montgomery:**
+- **Montgomery**
 
 Each city dataset had **different schemas, formats, and data quality issues**, requiring standardization before integration.
 
